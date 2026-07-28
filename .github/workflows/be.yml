@@ -15,10 +15,6 @@ jobs:
     permissions:
       contents: read
 
-    defaults:
-      run:
-        working-directory: be-nest
-
     steps:
       - uses: actions/checkout@v4
 
@@ -53,7 +49,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'be-nest'
+          app-name: 'be-nest-kms'
           slot-name: 'Production'
           package: .
           publish-profile: ${{ secrets.BE_PUBLISH_PROFILE }}
